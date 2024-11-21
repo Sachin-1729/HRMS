@@ -30,7 +30,7 @@ function ModalComponent({ open, onClose }) {
     })
 
    
-return false;
+
    
 
     try {
