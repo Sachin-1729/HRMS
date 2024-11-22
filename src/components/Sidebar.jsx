@@ -384,7 +384,13 @@ function ResponsiveDrawer(props) {
   function handleCloseprofilemodal() {
     setProfilemodal(false);
   }
-
+  
+  function handleclicksubmenu(subitem)
+  { 
+    console.log(subitem);
+    navigate(subitem?.toLowerCase());
+    
+  }
   const drawer = (
     <div>
       <Toolbar sx={{ display: "flex", justifyContent: "center", mt: 3 }}>
@@ -473,15 +479,13 @@ function ResponsiveDrawer(props) {
                   <Collapse in={open[index]} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                       {text.sub_menu.map((subItem, subIndex) => (
-                        <Link
-                          to={subItem?.path}
-                          style={{ textDecoration: "none", color: "inherit" }}
+                        <ListItemButton
                           key={subIndex}
+                          sx={{ pl: 4 }}
+                          onClick={() => handleclicksubmenu(subItem.route.split("/workplace")[1])}
                         >
-                          <ListItemButton sx={{ pl: 4 }}>
-                            <ListItemText primary={subItem?.name} />
-                          </ListItemButton>
-                        </Link>
+                          <ListItemText primary={subItem?.name} />
+                        </ListItemButton>
                       ))}
                     </List>
                   </Collapse>

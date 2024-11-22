@@ -21,6 +21,11 @@ import Allclient from "./admin/Allclient";
 import Allproject from "./users/Allproject";
 import Allemployee from "./admin/Allemployee";
 import Exportdata from "./admin/Dataexports";
+import Changepassword from "./admin/Changepassword";
+import Profile from "./admin/Profile";
+import Allleave from "./admin/Allleave"
+import Leavebalance from "./admin/Leavebalance"
+import Dashboard from "./admin/Dashboard";
 
 function App() {
   return (
@@ -30,7 +35,7 @@ function App() {
         <Routes>
           <Route element={<Adminlayout />}>
          
-            <Route path="/"></Route>
+            <Route path="/"  element={<Dashboard />}></Route>
             <Route path="/attendance" element={<Attendance />}></Route>
             <Route path="/team" element={<Team />}></Route>
             <Route path="/my-leave" element={<Myleave />}></Route>
@@ -43,6 +48,11 @@ function App() {
             <Route path="/project" element={<Allproject />}></Route>
             <Route path="/employee" element={<Allemployee />}></Route>
             <Route path="/export-data" element={<Exportdata />}></Route>
+            <Route path="/settings/change-password" element={<Changepassword />}></Route>
+            <Route path="/profile" element={<Profile />}></Route>
+            <Route path="/leave" element={<Allleave />}></Route>
+            <Route path="/leave/balance" element={<Leavebalance />}></Route>
+
           </Route>
           <Route element={<Guestlayout />}>
             <Route path="/login" element={<Login />}></Route>
